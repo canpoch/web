@@ -6,15 +6,15 @@
 }
 
 :root {
-    /* Color Palette - Inspired by nature and Catalan countryside */
-    --primary-green: #7c8471;
-    --sage-green: #a4b494;
-    --cream: #f5f2eb;
-    --warm-white: #faf7f0;
-    --stone-grey: #8b8680;
-    --charcoal: #2e2e2e;
-    --terracotta: #c19a7e;
-    --soft-gold: #d4b896;
+    /* Color Palette - Based on the Can Poch logo */
+    --primary-green: #4a5d4a;
+    --sage-green: #6b7d6b;
+    --cream: #f0ead6;
+    --warm-white: #f5f1e6;
+    --stone-grey: #4a5d4a;
+    --charcoal: #4a5d4a;
+    --terracotta: #d4621a;
+    --soft-gold: #d4621a;
     
     /* Typography */
     --font-heading: 'Playfair Display', serif;
@@ -77,9 +77,9 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(250, 247, 240, 0.95);
+    background: rgba(245, 241, 230, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(124, 132, 113, 0.1);
+    border-bottom: 1px solid rgba(74, 93, 74, 0.1);
     z-index: 999;
     transition: var(--transition);
 }
@@ -95,19 +95,15 @@ body {
     height: 120px;
 }
 
-.nav-logo h1 {
-    font-family: var(--font-heading);
-    font-size: 56px;
-    font-weight: 400;
-    color: var(--primary-green);
-    margin-bottom: -8px;
+.nav-logo {
+    display: flex;
+    align-items: center;
 }
 
-.nav-logo .tagline {
-    font-size: 24px;
-    color: var(--stone-grey);
-    font-style: normal !important;
-    margin-bottom: 60px;
+.logo-image {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
 }
 
 .nav-menu {
@@ -642,13 +638,8 @@ body {
         height: 100px;
     }
     
-    .nav-logo h1 {
-        font-size: 42px;
-    }
-    
-    .nav-logo .tagline {
-        font-size: 18px;
-        font-style: normal !important;
+    .logo-image {
+        height: 60px;
     }
     
     .hero {
