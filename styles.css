@@ -102,11 +102,11 @@ body {
 }
 
 .logo-image {
-    height: 240px;
+    height: 480px;
     width: auto;
     object-fit: cover;
     object-position: center;
-    max-height: 90px;
+    max-height: 180px;
     overflow: hidden;
 }
 
@@ -645,8 +645,8 @@ body {
     }
     
     .logo-image {
-        height: 180px;
-        max-height: 70px;
+        height: 360px;
+        max-height: 140px;
     }
     
     .hero {
