@@ -105,7 +105,7 @@ body {
 .nav-logo .tagline {
     font-size: 24px;
     color: var(--stone-grey);
-    font-style: italic;
+    font-style: normal;
 }
 
 .nav-menu {
@@ -182,14 +182,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 120px;
+    padding-top: 480px;
     background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
     position: relative;
 }
 
 .hero-image-centered {
     width: 100%;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 480px);
     background-image: url('hero-image.jpg');
     background-size: contain;
     background-position: center;
@@ -615,9 +615,13 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    .hero {
+        padding-top: 400px;
+    }
+    
     .hero-image-centered {
         width: 100%;
-        height: calc(100vh - 120px);
+        height: calc(100vh - 400px);
     }
     
     .content-grid {
@@ -649,11 +653,11 @@ body {
     }
     
     .hero {
-        padding-top: 100px;
+        padding-top: 300px;
     }
     
     .hero-image-centered {
-        height: calc(100vh - 100px);
+        height: calc(100vh - 300px);
     }
     
     .hamburger {
