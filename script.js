@@ -120,10 +120,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const navbar = document.querySelector('.navbar');
         if (navbar) {
             if (window.scrollY > 50) {
-                navbar.style.background = 'rgba(249, 247, 244, 0.98)';
+                navbar.style.background = 'rgba(250, 247, 240, 0.98)';
                 navbar.style.borderBottom = '1px solid rgba(124, 132, 113, 0.2)';
             } else {
-                navbar.style.background = 'rgba(249, 247, 244, 0.95)';
+                navbar.style.background = 'rgba(250, 247, 240, 0.95)';
                 navbar.style.borderBottom = '1px solid rgba(124, 132, 113, 0.1)';
             }
         }
