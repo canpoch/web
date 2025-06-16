@@ -91,19 +91,19 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 120px;
 }
 
 .nav-logo h1 {
     font-family: var(--font-heading);
-    font-size: 28px;
+    font-size: 56px;
     font-weight: 400;
     color: var(--primary-green);
-    margin-bottom: -5px;
+    margin-bottom: -8px;
 }
 
 .nav-logo .tagline {
-    font-size: 12px;
+    font-size: 24px;
     color: var(--stone-grey);
     font-style: italic;
 }
@@ -112,14 +112,14 @@ body {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 32px;
+    gap: 48px;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: var(--charcoal);
     font-weight: 400;
-    font-size: 15px;
+    font-size: 18px;
     transition: var(--transition);
     position: relative;
 }
@@ -146,9 +146,10 @@ body {
 .btn-reserve {
     background: var(--primary-green) !important;
     color: var(--warm-white) !important;
-    padding: 12px 24px !important;
-    border-radius: 25px !important;
+    padding: 16px 32px !important;
+    border-radius: 30px !important;
     font-weight: 500 !important;
+    font-size: 18px !important;
 }
 
 .btn-reserve:hover {
@@ -181,14 +182,14 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 120px;
     background: linear-gradient(135deg, var(--cream) 0%, var(--warm-white) 100%);
     position: relative;
 }
 
 .hero-image-centered {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 120px);
     background-image: url('hero-image.jpg');
     background-size: contain;
     background-position: center;
@@ -616,7 +617,7 @@ body {
 @media (max-width: 1024px) {
     .hero-image-centered {
         width: 100%;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 120px);
     }
     
     .content-grid {
@@ -635,6 +636,26 @@ body {
         --section-padding: 80px 0;
     }
     
+    .nav-container {
+        height: 100px;
+    }
+    
+    .nav-logo h1 {
+        font-size: 42px;
+    }
+    
+    .nav-logo .tagline {
+        font-size: 18px;
+    }
+    
+    .hero {
+        padding-top: 100px;
+    }
+    
+    .hero-image-centered {
+        height: calc(100vh - 100px);
+    }
+    
     .hamburger {
         display: flex;
     }
@@ -644,7 +665,7 @@ body {
     }
     
     .language-selector {
-        top: 90px;
+        top: 110px;
     }
     
     .features-grid {
