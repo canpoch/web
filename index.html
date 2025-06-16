@@ -1,60 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ca">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Can Poch</title>
+    <title>Can Poch - Casa teva al bosc</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Benvinguts a Can Poch</h1>
-        <p>Casa teva al bosc</p>
-    </header>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button id="lang-ca" class="lang-btn active">CA</button>
+        <button id="lang-en" class="lang-btn">EN</button>
+    </div>
 
-    <main>
-        <section id="property-details">
-            <h2>Property Details</h2>
-            <p>Enjoy a peaceful stay in our charming rural home, surrounded by nature. The property features:</p>
-            <ul>
-                <li>2 Bedrooms</li>
-                <li>1 Bathroom</li>
-                <li>Fully equipped kitchen</li>
-                <li>Spacious living area</li>
-                <li>Beautiful garden</li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Can Poch</h1>
+                <p class="tagline" data-ca="Casa teva al bosc" data-en="Your home in the forest">Casa teva al bosc</p>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#origen" data-ca="L'origen" data-en="The Origin">L'origen</a></li>
+                <li><a href="#masia" data-ca="La masia" data-en="The Farmhouse">La masia</a></li>
+                <li><a href="#entorn" data-ca="L'entorn" data-en="The Environment">L'entorn</a></li>
+                <li><a href="#contacte" data-ca="Contacte" data-en="Contact">Contacte</a></li>
+                <li><a href="#" class="btn-reserve" data-ca="Reserva" data-en="Book Now">Reserva</a></li>
             </ul>
-        </section>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
-        <section id="amenities">
-            <h2>Amenities</h2>
-            <ul>
-                <li>Wi-Fi</li>
-                <li>Free parking</li>
-                <li>Air conditioning</li>
-                <li>BBQ grill</li>
-                <li>Pet-friendly</li>
-            </ul>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Can Poch</h1>
+            <p class="hero-subtitle" data-ca="Casa teva al bosc" data-en="Your home in the forest">Casa teva al bosc</p>
+            <p class="hero-description" data-ca="Descobreix la pau i la tranquil·litat al cor de Catalunya. Un refugi perfecte per famílies, escriptors i retirs de ioga." data-en="Discover peace and tranquility in the heart of Catalunya. A perfect refuge for families, writers, and yoga retreats.">
+                Descobreix la pau i la tranquil·litat al cor de Catalunya. Un refugi perfecte per famílies, escriptors i retirs de ioga.
+            </p>
+            <a href="#masia" class="btn-primary" data-ca="Descobreix-ho" data-en="Discover">Descobreix-ho</a>
+        </div>
+        <div class="hero-image">
+            <!-- Hero image placeholder -->
+        </div>
+    </section>
 
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+    <!-- L'origen Section -->
+    <section id="origen" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ca="L'origen" data-en="The Origin">L'origen</h2>
+                <p class="section-subtitle" data-ca="La nostra història" data-en="Our story">La nostra història</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-text">
+                    <p data-ca="Can Poch va néixer del somni de crear un espai on la calma i el benestar es trobessin amb l'autèntica essència de Catalunya. Aquesta antiga masia, envoltada pel bosc, ha estat restaurada amb respecte cap a la seva història mentre s'ha adaptat per oferir tot el confort modern." data-en="Can Poch was born from the dream of creating a space where calm and wellbeing meet the authentic essence of Catalunya. This ancient farmhouse, surrounded by forest, has been restored with respect for its history while adapting to offer all modern comforts.">
+                        Can Poch va néixer del somni de crear un espai on la calma i el benestar es trobessin amb l'autèntica essència de Catalunya. Aquesta antiga masia, envoltada pel bosc, ha estat restaurada amb respecte cap a la seva història mentre s'ha adaptat per oferir tot el confort modern.
+                    </p>
+                    <p data-ca="Creiem que els millors records es creen en espais autèntics, on pots desconnectar del món i reconnectar amb tu mateix i els teus éssers estimats." data-en="We believe the best memories are created in authentic spaces, where you can disconnect from the world and reconnect with yourself and your loved ones.">
+                        Creiem que els millors records es creen en espais autèntics, on pots desconnectar del món i reconnectar amb tu mateix i els teus éssers estimats.
+                    </p>
+                </div>
+                <div class="content-image">
+                    <!-- Image placeholder -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+    <!-- La masia Section -->
+    <section id="masia" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ca="La masia" data-en="The Farmhouse">La masia</h2>
+                <p class="section-subtitle" data-ca="Un refugi de pau i confort" data-en="A refuge of peace and comfort">Un refugi de pau i confort</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏡</div>
+                    <h3 data-ca="Espais amplis" data-en="Spacious Areas">Espais amplis</h3>
+                    <p data-ca="Habitacions lluminoses amb vistes al bosc, perfectes per al descans i la inspiració." data-en="Bright rooms with forest views, perfect for rest and inspiration.">
+                        Habitacions lluminoses amb vistes al bosc, perfectes per al descans i la inspiració.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧘</div>
+                    <h3 data-ca="Espai per al benestar" data-en="Wellness Space">Espai per al benestar</h3>
+                    <p data-ca="Sala de ioga i meditació amb vistes panoràmiques al paisatge natural." data-en="Yoga and meditation room with panoramic views of the natural landscape.">
+                        Sala de ioga i meditació amb vistes panoràmiques al paisatge natural.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3 data-ca="Refugi creatiu" data-en="Creative Refuge">Refugi creatiu</h3>
+                    <p data-ca="Biblioteca i espais tranquils ideals per escriure i crear." data-en="Library and quiet spaces ideal for writing and creating.">
+                        Biblioteca i espais tranquils ideals per escriure i crear.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍👩‍👧‍👦</div>
+                    <h3 data-ca="Per a famílies" data-en="For Families">Per a famílies</h3>
+                    <p data-ca="Espais segurs i còmodes per gaudir en família, amb jardí privat." data-en="Safe and comfortable spaces to enjoy as a family, with private garden.">
+                        Espais segurs i còmodes per gaudir en família, amb jardí privat.
+                    </p>
+                </div>
+            </div>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+            <div class="property-details">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-number">4</span>
+                        <span class="detail-label" data-ca="Habitacions" data-en="Bedrooms">Habitacions</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-number">3</span>
+                        <span class="detail-label" data-ca="Banys" data-en="Bathrooms">Banys</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-number">8</span>
+                        <span class="detail-label" data-ca="Persones" data-en="Guests">Persones</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-number">∞</span>
+                        <span class="detail-label" data-ca="Tranquil·litat" data-en="Tranquility">Tranquil·litat</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-    </main>
+    <!-- L'entorn Section -->
+    <section id="entorn" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ca="L'entorn" data-en="The Environment">L'entorn</h2>
+                <p class="section-subtitle" data-ca="Natura i cultura en perfecta harmonia" data-en="Nature and culture in perfect harmony">Natura i cultura en perfecta harmonia</p>
+            </div>
+            
+            <div class="environment-content">
+                <div class="env-text">
+                    <p data-ca="Situat al cor de Catalunya, Can Poch ofereix l'equilibri perfecte entre natura salvatge i riquesa cultural. Els boscos que envolten la masia conviden a passejos meditatius, mentre que els pobles propers conserven segles d'història i tradició catalana." data-en="Located in the heart of Catalunya, Can Poch offers the perfect balance between wild nature and cultural richness. The forests surrounding the farmhouse invite meditative walks, while nearby villages preserve centuries of Catalan history and tradition.">
+                        Situat al cor de Catalunya, Can Poch ofereix l'equilibri perfecte entre natura salvatge i riquesa cultural. Els boscos que envolten la masia conviden a passejos meditatius, mentre que els pobles propers conserven segles d'història i tradició catalana.
+                    </p>
+                </div>
+                
+                <div class="activities-grid">
+                    <div class="activity-card">
+                        <h4 data-ca="Senderisme" data-en="Hiking">Senderisme</h4>
+                        <p data-ca="Rutes per descobrir els secrets del bosc mediterrani" data-en="Routes to discover the secrets of the Mediterranean forest">Rutes per descobrir els secrets del bosc mediterrani</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4 data-ca="Cultura local" data-en="Local Culture">Cultura local</h4>
+                        <p data-ca="Mercats, festivals i traditions autèntiques" data-en="Markets, festivals and authentic traditions">Mercats, festivals i traditions autèntiques</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4 data-ca="Gastronomia" data-en="Gastronomy">Gastronomia</h4>
+                        <p data-ca="Restaurants locals amb productes de km 0" data-en="Local restaurants with km 0 products">Restaurants locals amb productes de km 0</p>
+                    </div>
+                    <div class="activity-card">
+                        <h4 data-ca="Benestar" data-en="Wellness">Benestar</h4>
+                        <p data-ca="Espais naturals perfectes per a la meditació" data-en="Natural spaces perfect for meditation">Espais naturals perfectes per a la meditació</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Can Poch. All rights reserved.</p>
+    <!-- Testimonials -->
+    <section class="testimonials section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ca="Experiències autèntiques" data-en="Authentic Experiences">Experiències autèntiques</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p data-ca="«Can Poch és molt més que un allotjament. És un lloc on el temps s'atura i pots reconnectar amb l'essencial. El nostre retir de ioga aquí va ser transformador.»" data-en="«Can Poch is much more than accommodation. It's a place where time stops and you can reconnect with the essential. Our yoga retreat here was transformative.»">
+                        «Can Poch és molt més que un allotjament. És un lloc on el temps s'atura i pots reconnectar amb l'essencial. El nostre retir de ioga aquí va ser transformador.»
+                    </p>
+                    <cite>Maria, Barcelona</cite>
+                </div>
+                <div class="testimonial">
+                    <p data-ca="«Els nostres fills van descobrir la natura de manera autèntica mentre nosaltres vam trobar la pau que cercàvem. Una experiència familiar inoblidable.»" data-en="«Our children discovered nature authentically while we found the peace we were looking for. An unforgettable family experience.»">
+                        «Els nostres fills van descobrir la natura de manera autèntica mentre nosaltres vam trobar la pau que cercàvem. Una experiència familiar inoblidable.»
+                    </p>
+                    <cite>David i Anna, Madrid</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacte" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-ca="Contacte" data-en="Contact">Contacte</h2>
+                <p class="section-subtitle" data-ca="Vine a descobrir Can Poch" data-en="Come discover Can Poch">Vine a descobrir Can Poch</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4 data-ca="Ubicació" data-en="Location">Ubicació</h4>
+                        <p>Catalunya, Espanya</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4 data-ca="Reserves" data-en="Bookings">Reserves</h4>
+                        <p>info@canpoch.cat</p>
+                        <p>+34 XXX XXX XXX</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4 data-ca="Horari d'atenció" data-en="Contact Hours">Horari d'atenció</h4>
+                        <p data-ca="9:00 - 20:00 h" data-en="9:00 AM - 8:00 PM">9:00 - 20:00 h</p>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" data-ca="Nom" data-en="Name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-ca="Correu electrònic" data-en="Email">Correu electrònic</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dates" data-ca="Dates d'interès" data-en="Interested Dates">Dates d'interès</label>
+                        <input type="text" id="dates" name="dates" placeholder="DD/MM/YYYY - DD/MM/YYYY">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-ca="Missatge" data-en="Message">Missatge</label>
+                        <textarea id="message" name="message" rows="4" data-ca="Explica'ns una mica sobre la teva estada ideal..." data-en="Tell us about your ideal stay..." placeholder="Explica'ns una mica sobre la teva estada ideal..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" data-ca="Enviar missatge" data-en="Send Message">Enviar missatge</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Can Poch</h3>
+                    <p data-ca="Casa teva al bosc" data-en="Your home in the forest">Casa teva al bosc</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-ca="Política de privacitat" data-en="Privacy Policy">Política de privacitat</a>
+                    <a href="#" data-ca="Condicions d'ús" data-en="Terms of Use">Condicions d'ús</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Can Poch. <span data-ca="Tots els drets reservats." data-en="All rights reserved.">Tots els drets reservats.</span></p>
+            </div>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
