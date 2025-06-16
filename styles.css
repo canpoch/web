@@ -9,8 +9,8 @@
     /* Color Palette - Inspired by nature and Catalan countryside */
     --primary-green: #7c8471;
     --sage-green: #a4b494;
-    --cream: #f9f7f4;
-    --warm-white: #fefcfa;
+    --cream: #f5f2eb;
+    --warm-white: #faf7f0;
     --stone-grey: #8b8680;
     --charcoal: #2e2e2e;
     --terracotta: #c19a7e;
@@ -105,7 +105,8 @@ body {
 .nav-logo .tagline {
     font-size: 24px;
     color: var(--stone-grey);
-    font-style: italic;
+    font-style: normal;
+    margin-bottom: 20px;
 }
 
 .nav-menu {
