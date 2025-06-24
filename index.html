@@ -54,11 +54,17 @@
             </div>
             <div class="content-grid">
                 <div class="content-text">
-                    <p data-ca="Can Poch va néixer del somni de crear un espai on la calma i el benestar es trobessin amb l'autèntica essència de Catalunya. Aquesta antiga masia, envoltada pel bosc, ha estat restaurada amb respecte cap a la seva història mentre s'ha adaptat per oferir tot el confort modern." data-en="Can Poch was born from the dream of creating a space where calm and wellbeing meet the authentic essence of Catalunya. This ancient farmhouse, surrounded by forest, has been restored with respect for its history while adapting to offer all modern comforts.">
-                        Can Poch va néixer del somni de crear un espai on la calma i el benestar es trobessin amb l'autèntica essència de Catalunya. Aquesta antiga masia, envoltada pel bosc, ha estat restaurada amb respecte cap a la seva història mentre s'ha adaptat per oferir tot el confort modern.
+                    <p data-ca="Can Poch existeix, com a mínim, des del 1700, que és la data des de la qual se n'han trobat escriptures. Més enllà d'aquest origen llunyà en el temps, en la nostra història recent, la casa ha estat habitada durant el darrer segle. A més dels diferents masovers, que van fer créixer i tenir cura de l'espai durant els darrers anys, a principis dels anys 90, l'avi Jaume hi va començar un petit hort. Amb els anys, aquesta extensió de terra fèrtil que es troba just davant la casa, va proveir d'hortalisses i verdures a tota la família i amics durant més de dues dècades." data-en="Can Poch has existed, at least, since 1700, which is the date from which deeds have been found. Beyond this distant origin in time, in our recent history, the house has been inhabited during the last century. In addition to the different sharecroppers, who grew and took care of the space during recent years, in the early 90s, grandfather Jaume started a small vegetable garden there. Over the years, this extension of fertile land located right in front of the house provided vegetables and greens to the whole family and friends for more than two decades.">
+                        Can Poch existeix, com a mínim, des del 1700, que és la data des de la qual se n'han trobat escriptures. Més enllà d'aquest origen llunyà en el temps, en la nostra història recent, la casa ha estat habitada durant el darrer segle. A més dels diferents masovers, que van fer créixer i tenir cura de l'espai durant els darrers anys, a principis dels anys 90, l'avi Jaume hi va començar un petit hort. Amb els anys, aquesta extensió de terra fèrtil que es troba just davant la casa, va proveir d'hortalisses i verdures a tota la família i amics durant més de dues dècades.
                     </p>
-                    <p data-ca="Creiem que els millors records es creen en espais autèntics, on pots desconnectar del món i reconnectar amb tu mateix i els teus éssers estimats." data-en="We believe the best memories are created in authentic spaces, where you can disconnect from the world and reconnect with yourself and your loved ones.">
-                        Creiem que els millors records es creen en espais autèntics, on pots desconnectar del món i reconnectar amb tu mateix i els teus éssers estimats.
+                    <p data-ca="Tot i no viure-hi, l'avi Jaume va començar a tornar a habitar cada petit racó del qual havia estat casa dels seus avis, rebesavis i moltes altres generacions enrere en el seu arbre genealògic." data-en="Despite not living there, grandfather Jaume began to re-inhabit every small corner of what had been the home of his grandparents, great-grandparents and many other generations back in his family tree.">
+                        Tot i no viure-hi, l'avi Jaume va començar a tornar a habitar cada petit racó del qual havia estat casa dels seus avis, rebesavis i moltes altres generacions enrere en el seu arbre genealògic.
+                    </p>
+                    <p data-ca="El seu tarannà acollidor va fer que Can Poch es convertís de mica en mica, en una extensió de la seva manera d'entendre la vida, en un espai de trobada, d'acollida i de molta vida. Un lloc on cuidar-se a un mateix, a la terra i els vincles amb la gent que estimes." data-en="His welcoming nature made Can Poch gradually become an extension of his way of understanding life, a meeting space, of welcome and full of life. A place to take care of yourself, the land and the bonds with the people you love.">
+                        El seu tarannà acollidor va fer que Can Poch es convertís de mica en mica, en una extensió de la seva manera d'entendre la vida, en un espai de trobada, d'acollida i de molta vida. Un lloc on cuidar-se a un mateix, a la terra i els vincles amb la gent que estimes.
+                    </p>
+                    <p data-ca="I amb aquesta idea és amb la qual aquesta antiga masia obre les portes ara, amb la de ser un lloc de rebuda i acolliment, un espai per ser, per viure'l, gaudir-lo i compartir-lo." data-en="And it is with this idea that this ancient farmhouse now opens its doors, to be a place of welcome and hospitality, a space to be, to live it, enjoy it and share it.">
+                        I amb aquesta idea és amb la qual aquesta antiga masia obre les portes ara, amb la de ser un lloc de rebuda i acolliment, un espai per ser, per viure'l, gaudir-lo i compartir-lo.
                     </p>
                 </div>
                 <div class="content-image">
@@ -235,7 +241,7 @@
                     </div>
                 </div>
                 
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/xdkonorq" method="POST">
                     <div class="form-group">
                         <label for="name" data-ca="Nom" data-en="Name">Nom</label>
                         <input type="text" id="name" name="name" required>
@@ -252,6 +258,13 @@
                         <label for="message" data-ca="Missatge" data-en="Message">Missatge</label>
                         <textarea id="message" name="message" rows="4" data-ca="Explica'ns una mica sobre la teva estada ideal..." data-en="Tell us about your ideal stay..." placeholder="Explica'ns una mica sobre la teva estada ideal..." required></textarea>
                     </div>
+                    
+                    <!-- Hidden field to specify recipient email -->
+                    <input type="hidden" name="_to" value="hola@canpoch.cat">
+                    <input type="hidden" name="_subject" value="Nova consulta des de Can Poch">
+                    <input type="hidden" name="_next" value="thank-you.html">
+                    <input type="hidden" name="_language" value="ca">
+                    
                     <button type="submit" class="btn-primary" data-ca="Enviar missatge" data-en="Send Message">Enviar missatge</button>
                 </form>
             </div>
