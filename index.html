@@ -6,6 +6,71 @@
     <title>Can Poch - Casa teva al bosc</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌳</text></svg>">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Vertical spacing between property details and amenities */
+        .amenities-section {
+            margin-top: 3rem;
+        }
+        
+        /* Vertical spacing above each room title */
+        .amenity-category h4 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* First category doesn't need top margin */
+        .amenity-category:first-child h4 {
+            margin-top: 1rem;
+        }
+        
+        /* 2-column layout for amenities */
+        .amenities-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .amenity-category {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .amenity-category ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .amenity-category li {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .amenity-category li:before {
+            content: "• ";
+            color: #2c3e50;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        /* Mobile responsive - single column */
+        @media (max-width: 768px) {
+            .amenities-grid {
+                flex-direction: column;
+            }
+            
+            .amenity-category {
+                min-width: 100%;
+            }
+            
+            .amenities-section {
+                margin-top: 2rem;
+            }
+            
+            .amenity-category h4 {
+                margin-top: 1.5rem;
+            }
+        }
+    </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -224,16 +289,16 @@
                 <div class="location-sections">
                     <div class="location-section">
                         <h3 data-ca="Natura i activitats a l'aire lliure:" data-en="Nature and outdoor activities:">Natura i activitats a l'aire lliure:</h3>
-                        <div class="activities-grid">
-                            <div class="activity-card">
+                <div class="activities-grid">
+                    <div class="activity-card">
                                 <h4 data-ca="▸ Parc Natural del Montseny (25 min)" data-en="▸ Montseny Natural Park (25 min)">▸ Parc Natural del Montseny (25 min)</h4>
                                 <p data-ca="Reserva de la biosfera de la UNESCO. Rutes de senderisme, boscos frondosos, rius i paisatges espectaculars. Ideal per a excursions familiars o passejos més exigents." data-en="UNESCO biosphere reserve. Hiking trails, lush forests, rivers and spectacular landscapes. Ideal for family excursions or more demanding walks.">Reserva de la biosfera de la UNESCO. Rutes de senderisme, boscos frondosos, rius i paisatges espectaculars. Ideal per a excursions familiars o passejos més exigents.</p>
                             </div>
                             <div class="activity-card">
                                 <h4 data-ca="▸ Passejos i rutes en bicicleta de muntanya des de Santa Agnès de Malanyanes" data-en="▸ Walks and mountain bike routes from Santa Agnès de Malanyanes">▸ Passejos i rutes en bicicleta de muntanya des de Santa Agnès de Malanyanes</h4>
                                 <p data-ca="Els camins forestals i els senders rurals permeten explorar boscos mediterranis, camps d'ametllers i turons amb vistes. Pots anar caminant o en bicicleta des de Can Poch." data-en="Forest paths and rural trails allow you to explore Mediterranean forests, almond fields and hills with views. You can walk or cycle from Can Poch.">Els camins forestals i els senders rurals permeten explorar boscos mediterranis, camps d'ametllers i turons amb vistes. Pots anar caminant o en bicicleta des de Can Poch.</p>
-                            </div>
-                            <div class="activity-card">
+                    </div>
+                    <div class="activity-card">
                                 <h4 data-ca="▸ Platja i costa del Maresme (20-25 min)" data-en="▸ Maresme beach and coast (20-25 min)">▸ Platja i costa del Maresme (20-25 min)</h4>
                                 <p data-ca="Les platges de Caldes d'Estrac, Sant Vicenç de Montalt i Mataró ofereixen natació, passejos vora el mar i bon marisc." data-en="The beaches of Caldes d'Estrac, Sant Vicenç de Montalt and Mataró offer swimming, seaside walks and good seafood.">Les platges de Caldes d'Estrac, Sant Vicenç de Montalt i Mataró ofereixen natació, passejos vora el mar i bon marisc.</p>
                             </div>
@@ -250,8 +315,8 @@
                             <div class="activity-card">
                                 <h4 data-ca="▸ Granollers (10-15 min)" data-en="▸ Granollers (10-15 min)">▸ Granollers (10-15 min)</h4>
                                 <p data-ca="Centre històric amb carrers comercials i arquitectura modernista.<br>Museu de Granollers i L'Adoberia (jaciment arqueològic romà).<br>Mercat setmanal (dijous), un dels més antics de Catalunya." data-en="Historic center with commercial streets and modernist architecture.<br>Granollers Museum and L'Adoberia (Roman archaeological site).<br>Weekly market (Thursday), one of the oldest in Catalunya.">Centre històric amb carrers comercials i arquitectura modernista.<br>Museu de Granollers i L'Adoberia (jaciment arqueològic romà).<br>Mercat setmanal (dijous), un dels més antics de Catalunya.</p>
-                            </div>
-                            <div class="activity-card">
+                    </div>
+                    <div class="activity-card">
                                 <h4 data-ca="▸ Cardedeu (15 min)" data-en="▸ Cardedeu (15 min)">▸ Cardedeu (15 min)</h4>
                                 <p data-ca="Encantador poble amb edificis modernistes.<br>Museu Tomàs Balvey i Jardins de Can Lledó.<br>Petites botigues i cafeteries locals." data-en="Charming town with modernist buildings.<br>Tomàs Balvey Museum and Can Lledó Gardens.<br>Small local shops and cafés.">Encantador poble amb edificis modernistes.<br>Museu Tomàs Balvey i Jardins de Can Lledó.<br>Petites botigues i cafeteries locals.</p>
                             </div>
@@ -261,7 +326,7 @@
                     <div class="location-section">
                         <h3 data-ca="Compres i oci" data-en="Shopping and leisure">Compres i oci</h3>
                         <div class="activities-grid">
-                            <div class="activity-card">
+                    <div class="activity-card">
                                 <h4 data-ca="▸ La Roca Village (10 min)" data-en="▸ La Roca Village (10 min)">▸ La Roca Village (10 min)</h4>
                                 <p data-ca="Outlet de marques internacionals amb descomptes tot l'any. També compta amb restaurants, cafeteries i espais per relaxar-se." data-en="International brand outlet with year-round discounts. It also has restaurants, cafés and spaces to relax.">Outlet de marques internacionals amb descomptes tot l'any. També compta amb restaurants, cafeteries i espais per relaxar-se.</p>
                             </div>
