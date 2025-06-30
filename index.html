@@ -267,8 +267,8 @@
             }
         }
         
-        /* YouTube-style Video Player */
-        .video-container {
+        /* Video Player Styles */
+        .video-wrapper {
             position: relative;
             width: 100%;
             background: #000;
@@ -277,123 +277,84 @@
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         
-        .video-container video {
+        .video-wrapper video {
             width: 100%;
             display: block;
             cursor: pointer;
         }
         
-        /* Video Controls Container */
+        /* Video Controls */
         .video-controls {
             position: absolute;
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
-            padding: 40px 15px 15px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 20px 15px 10px;
             opacity: 0;
             transition: opacity 0.3s ease;
+            pointer-events: none;
         }
         
-        .video-container:hover .video-controls,
-        .video-container.controls-visible .video-controls {
+        .video-wrapper:hover .video-controls {
             opacity: 1;
+            pointer-events: auto;
         }
         
         /* Progress Bar */
-        .progress-container {
-            position: relative;
+        .progress-bar-container {
             width: 100%;
-            height: 30px;
+            height: 5px;
+            background: rgba(255,255,255,0.3);
             cursor: pointer;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            position: relative;
         }
         
         .progress-bar {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 3px;
-            background: rgba(255,255,255,0.3);
-            transition: height 0.1s ease;
-        }
-        
-        .progress-container:hover .progress-bar {
-            height: 5px;
-        }
-        
-        .progress-buffered {
-            position: absolute;
+            position: relative;
             height: 100%;
-            background: rgba(255,255,255,0.5);
-            width: 0;
         }
         
         .progress-filled {
-            position: absolute;
             height: 100%;
-            background: #ff0000;
+            background: #e74c3c;
             width: 0;
+            transition: width 0.1s;
         }
         
         .progress-handle {
             position: absolute;
             width: 12px;
             height: 12px;
-            background: #ff0000;
+            background: #e74c3c;
             border-radius: 50%;
             top: 50%;
             transform: translate(-50%, -50%);
             left: 0;
-            opacity: 0;
-            transition: opacity 0.1s;
         }
         
-        .progress-container:hover .progress-handle {
-            opacity: 1;
-        }
-        
-        .time-tooltip {
-            position: absolute;
-            bottom: 20px;
-            background: rgba(0,0,0,0.8);
-            color: white;
-            padding: 3px 8px;
-            border-radius: 3px;
-            font-size: 12px;
-            pointer-events: none;
-            opacity: 0;
-            transform: translateX(-50%);
-        }
-        
-        /* Bottom Controls */
-        .controls-bottom {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .controls-left, .controls-right {
+        /* Controls Row */
+        .controls-row {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 15px;
         }
         
-        /* Control Buttons */
         .control-btn {
             background: none;
             border: none;
             color: white;
             cursor: pointer;
-            padding: 8px;
+            padding: 5px;
+            transition: opacity 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: opacity 0.2s;
         }
         
         .control-btn:hover {
-            opacity: 0.8;
+            opacity: 0.7;
         }
         
         .control-btn svg {
@@ -402,26 +363,30 @@
         }
         
         /* Volume Control */
-        .volume-control {
+        .volume-container {
             display: flex;
             align-items: center;
             position: relative;
         }
         
         .volume-slider-container {
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
             width: 0;
             overflow: hidden;
-            transition: width 0.2s ease;
-            margin-left: 5px;
+            transition: width 0.3s ease;
+            margin-left: 10px;
         }
         
-        .volume-control:hover .volume-slider-container {
+        .volume-container:hover .volume-slider-container {
             width: 80px;
         }
         
         .volume-slider {
             width: 80px;
-            height: 3px;
+            height: 4px;
             -webkit-appearance: none;
             appearance: none;
             background: rgba(255,255,255,0.3);
@@ -451,94 +416,78 @@
         /* Time Display */
         .time-display {
             color: white;
-            font-size: 13px;
+            font-size: 14px;
             font-family: Arial, sans-serif;
-            user-select: none;
+            white-space: nowrap;
+        }
+        
+        .spacer {
+            flex-grow: 1;
         }
         
         /* Quality Selector */
-        .quality-selector-container {
+        .quality-container {
             position: relative;
         }
         
         .quality-menu {
             position: absolute;
-            bottom: 40px;
+            bottom: 100%;
             right: 0;
-            background: rgba(28,28,28,0.95);
-            border-radius: 8px;
-            padding: 8px 0;
-            min-width: 120px;
+            background: rgba(0,0,0,0.9);
+            border-radius: 5px;
+            padding: 5px 0;
+            margin-bottom: 10px;
+            min-width: 80px;
             display: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
         }
         
-        .quality-selector-container.active .quality-menu {
+        .quality-container.active .quality-menu {
             display: block;
         }
         
-        .menu-header {
-            color: #aaa;
-            font-size: 12px;
-            padding: 8px 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 4px;
-        }
-        
         .quality-option {
+            padding: 8px 15px;
             color: white;
-            padding: 8px 16px;
             cursor: pointer;
-            font-size: 14px;
             transition: background 0.2s;
         }
         
         .quality-option:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.2);
         }
         
         .quality-option.active {
-            color: #ff0000;
+            color: #e74c3c;
         }
         
-        /* Fullscreen specific styles */
-        .video-container:fullscreen {
-            width: 100vw;
-            height: 100vh;
+        /* Fullscreen styles */
+        .video-wrapper:fullscreen {
+            border-radius: 0;
         }
         
-        .video-container:fullscreen video {
+        .video-wrapper:fullscreen video {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
         
+        /* Responsive */
         @media (max-width: 768px) {
-            .video-controls {
-                padding: 30px 10px 10px;
+            .controls-row {
+                gap: 10px;
             }
             
-            .control-btn {
-                padding: 5px;
+            .time-display {
+                font-size: 12px;
             }
             
             .control-btn svg {
                 width: 20px;
                 height: 20px;
             }
-            
-            .time-display {
-                font-size: 11px;
-            }
-            
-            .volume-control:hover .volume-slider-container {
-                width: 60px;
-            }
-            
-            .volume-slider {
-                width: 60px;
-            }
         }
+
 
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;600&family=Source+Sans+Pro:wght@300;400;600&family=Dancing+Script:wght@400;500;600&display=swap" rel="stylesheet">
@@ -632,88 +581,75 @@
                     </p>
                 </div>
                 <div class="content-image">
-                    <div class="video-container" id="videoContainer">
+                    <div class="video-wrapper">
                         <video id="masiaVideo" preload="metadata">
                             <source src="videos/CanPoch_hd.mp4" type="video/mp4" id="videoSource">
                             <p data-ca="El teu navegador no suporta vídeos HTML5." data-en="Your browser doesn't support HTML5 video.">El teu navegador no suporta vídeos HTML5.</p>
                         </video>
                         
-                        <!-- Video Controls -->
                         <div class="video-controls">
-                            <!-- Progress Bar -->
-                            <div class="progress-container">
+                            <div class="progress-bar-container">
                                 <div class="progress-bar">
-                                    <div class="progress-buffered"></div>
                                     <div class="progress-filled"></div>
                                     <div class="progress-handle"></div>
                                 </div>
-                                <div class="time-tooltip">00:00</div>
                             </div>
                             
-                            <!-- Bottom Controls -->
-                            <div class="controls-bottom">
-                                <div class="controls-left">
-                                    <!-- Play/Pause Button -->
-                                    <button id="playPauseBtn" class="control-btn">
-                                        <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24">
-                                            <path d="M8 5v14l11-7z" fill="currentColor"/>
+                            <div class="controls-row">
+                                <!-- Play/Pause -->
+                                <button class="control-btn play-pause-btn" id="playPauseBtn">
+                                    <svg class="play-icon" viewBox="0 0 24 24" width="24" height="24">
+                                        <path d="M8 5v14l11-7z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="pause-icon" style="display:none" viewBox="0 0 24 24" width="24" height="24">
+                                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                                
+                                <!-- Volume -->
+                                <div class="volume-container">
+                                    <button class="control-btn volume-btn" id="volumeBtn">
+                                        <svg class="volume-icon" viewBox="0 0 24 24" width="24" height="24">
+                                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
                                         </svg>
-                                        <svg class="pause-icon" style="display:none" width="24" height="24" viewBox="0 0 24 24">
-                                            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor"/>
+                                        <svg class="mute-icon" style="display:none" viewBox="0 0 24 24" width="24" height="24">
+                                            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" fill="currentColor"/>
                                         </svg>
                                     </button>
-                                    
-                                    <!-- Volume Control -->
-                                    <div class="volume-control">
-                                        <button id="volumeBtn" class="control-btn">
-                                            <svg class="volume-high" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" fill="currentColor"/>
-                                            </svg>
-                                            <svg class="volume-low" style="display:none" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5z" fill="currentColor"/>
-                                            </svg>
-                                            <svg class="volume-mute" style="display:none" width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z" fill="currentColor"/>
-                                            </svg>
-                                        </button>
-                                        <div class="volume-slider-container">
-                                            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Time Display -->
-                                    <div class="time-display">
-                                        <span class="current-time">0:00</span>
-                                        <span> / </span>
-                                        <span class="duration">0:00</span>
+                                    <div class="volume-slider-container">
+                                        <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="100">
                                     </div>
                                 </div>
                                 
-                                <div class="controls-right">
-                                    <!-- Quality Selector -->
-                                    <div class="quality-selector-container">
-                                        <button id="qualityBtn" class="control-btn">
-                                            <svg width="24" height="24" viewBox="0 0 24 24">
-                                                <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" fill="currentColor"/>
-                                            </svg>
-                                        </button>
-                                        <div class="quality-menu">
-                                            <div class="menu-header">Quality</div>
-                                            <div class="quality-option active" data-quality="hd">HD</div>
-                                            <div class="quality-option" data-quality="sd">SD</div>
-                                        </div>
-                                    </div>
-                                    
-                                    <!-- Fullscreen Button -->
-                                    <button id="fullscreenBtn" class="control-btn">
-                                        <svg class="fullscreen-icon" width="24" height="24" viewBox="0 0 24 24">
-                                            <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="currentColor"/>
-                                        </svg>
-                                        <svg class="exit-fullscreen-icon" style="display:none" width="24" height="24" viewBox="0 0 24 24">
-                                            <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" fill="currentColor"/>
+                                <!-- Time display -->
+                                <div class="time-display">
+                                    <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+                                </div>
+                                
+                                <div class="spacer"></div>
+                                
+                                <!-- Quality -->
+                                <div class="quality-container">
+                                    <button class="control-btn quality-btn" id="qualityBtn">
+                                        <svg viewBox="0 0 24 24" width="24" height="24">
+                                            <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z" fill="currentColor"/>
                                         </svg>
                                     </button>
+                                    <div class="quality-menu">
+                                        <div class="quality-option active" data-quality="hd">HD</div>
+                                        <div class="quality-option" data-quality="sd">SD</div>
+                                    </div>
                                 </div>
+                                
+                                <!-- Fullscreen -->
+                                <button class="control-btn fullscreen-btn" id="fullscreenBtn">
+                                    <svg class="maximize-icon" viewBox="0 0 24 24" width="24" height="24">
+                                        <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="minimize-icon" style="display:none" viewBox="0 0 24 24" width="24" height="24">
+                                        <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" fill="currentColor"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
