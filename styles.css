@@ -309,11 +309,7 @@ body {
 }
 
 .content-image {
-    height: 400px;
-    background: var(--sage-green);
-    border-radius: var(--border-radius);
     position: relative;
-    overflow: hidden;
 }
 
 
