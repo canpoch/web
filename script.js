@@ -315,37 +315,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Video quality selector
-    const masiaVideo = document.getElementById('masiaVideo');
-    const qualityButtons = document.querySelectorAll('.quality-btn');
-    
-    if (masiaVideo && qualityButtons.length > 0) {
-        qualityButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const quality = this.getAttribute('data-quality');
-                const currentTime = masiaVideo.currentTime;
-                const wasPlaying = !masiaVideo.paused;
-                
-                // Update active button
-                qualityButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                
-                // Change video source
-                if (quality === 'hd') {
-                    masiaVideo.src = 'videos/CanPoch_hd.mp4';
-                } else {
-                    masiaVideo.src = 'videos/CanPoch_low.mp4';
-                }
-                
-                // Restore playback position
-                masiaVideo.addEventListener('loadedmetadata', function restorePlayback() {
-                    masiaVideo.currentTime = currentTime;
-                    if (wasPlaying) {
-                        masiaVideo.play();
-                    }
-                    masiaVideo.removeEventListener('loadedmetadata', restorePlayback);
-                });
-            });
-        });
-    }
+
 }); 
