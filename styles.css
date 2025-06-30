@@ -316,17 +316,7 @@ body {
     overflow: hidden;
 }
 
-.content-image::after {
-    content: 'Fotografia històrica de Can Poch';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: var(--warm-white);
-    font-style: italic;
-    opacity: 0.7;
-    text-align: center;
-}
+
 
 /* Features Grid */
 .features-grid {
